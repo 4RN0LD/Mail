@@ -2053,31 +2053,33 @@ public class Mail {
 		try {
 			// Crear el cuerpo del mensaje
 			MimeMessage mimeMessage = new MimeMessage(session);
-			mimeMessage.setText("<div style=\"font-family: sans-serif;color: #777;margin: 10px;border: solid 1px #337ab7;padding: 15px; border-radius: 5px;\">\n" +
-					"\t\t<h2>Buen día CPC. " + receptor[0] + ",</h2>\n" +
-					"\t\t<hr style=\"border-color: #337ab7; margin-top: 20px;margin-bottom: 20px;\">\n" +
-					"\t\tMediante el presente adjunto convocatoria a la Asamblea General Ordinaria, programada para el día 01 de junio del 2019, que tendrá lugar en el auditorio del Colegio de Abogados – Huaraz – Ancash – Pasaje Parque Ginebra S/N a espaldas del banco de la Nación.\n" +
-					"\t\t<br><br>\n" +
-					"\t\t<div style=\"text-align: center;\">\n" +
-					"\t\t\t<img style=\"border-radius: 15px\" src=\"http://www.ccpancash.org/images/BANNER%20ASAMBLEA.png\" alt=\"\" width=\"650\" height=\"500\">\n" +
-					"\t\t</div>\n" +
-					"<br><br>\n" +
-					"\t\t<h3>NOTA: Se le recuerda portar su DNI para acceder a las instalaciones.</h3>"+
-					"\t</div>\n" +
-					"\t<p>\n" +
-					"\t\t<div style=\"float: left; text-align: left;font-family: sans-serif;color: #777;font-size: 24;\">\n" +
-					"\t\t\t<table>\n" +
-					"\t\t\t\t<tr>\n" +
-					"\t\t\t\t\t<td><img src=\"http://www.ccpancash.org/images/logocca.png\" alt=\"\" height=\"100\" width=\"100\"></td>\n" +
-					"\t\t\t\t\t<td>\n" +
-					"\t\t\t\t\t\t<h3>Colegio de Contadores Públicos de Ancash</h3>\n" +
-					"\t\t\t\t\t\t<a href=\"http://www.ccpancash.org/\">www.ccpancash.org</a>\n" +
-					"\t\t\t\t\t</td>\n" +
-					"\t\t\t\t</tr>\n" +
-					"\t\t\t</table>\n" +
-					"\t\t</div>\n" +
-					"\t</p>", "UTF-8", "html");
-			mimeMessage.setSubject("Convocatoria a la Asamblea General Ordinaria");
+			mimeMessage.setText(
+					"<div style=\"font-family: sans-serif;color: #777;margin: 10px;border: solid 1px #337ab7;padding: 15px; border-radius: 5px;\">\n" +
+							"    <h2>Buen día CPC. " + receptor[0] + ",</h2>\n" +
+							"    <hr style=\"border-color: #337ab7; margin-top: 20px;margin-bottom: 20px;\">\n" +
+							"    Mediante el presente se cita a todos los miembros del Consejo Directivo del Colegio de Contadores Públicos de Ancash,\n" +
+							"    a la Sesión Extraordinaria del Consejo Directivo N° 012-2019-CCPA/D\n" +
+							"    <br><br>\n" +
+							"    <div style=\"text-align: center;\">\n" +
+							"        <img style=\"border-radius: 15px\" src=\"http://www.ccpancash.org/images/Citacion%20Extraordinaria.png\" alt=\"\" width=\"650\"\n" +
+							"            height=\"1000\">\n" +
+							"    </div>\n" +
+							"</div>\n" +
+							"<p>\n" +
+							"    <div style=\"float: left; text-align: left;font-family: sans-serif;color: #777;font-size: 24;\">\n" +
+							"        <table>\n" +
+							"            <tr>\n" +
+							"                <td><img src=\"http://www.ccpancash.org/images/logocca.png\" alt=\"\" height=\"100\" width=\"100\"></td>\n" +
+							"                <td>\n" +
+							"                    <h3>Colegio de Contadores Públicos de Ancash</h3>\n" +
+							"                    <a href=\"http://www.ccpancash.org/\">www.ccpancash.org</a>\n" +
+							"                </td>\n" +
+							"            </tr>\n" +
+							"        </table>\n" +
+							"    </div>\n" +
+							"</p>"
+					, "UTF-8", "html");
+			mimeMessage.setSubject("Convocatoria a session Extraordinaria");
 			mimeMessage.setFrom(new InternetAddress(correoEnvia));
 			Address destino = new InternetAddress(receptor[1]);
 			mimeMessage.addRecipient(Message.RecipientType.TO, destino);
